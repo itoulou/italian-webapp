@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load bootstrap_tags %}
+{% block title %}Index{% endblock %}
+{% block content %}
+<form action="{% url 'register' %}" method="POST">
+    {% csrf_token %}
+    {{ register_form | as_bootstrap }}
+    <button type="submit">Sign up</button>
+</form>
+<a href="{% url 'login' %}">Login</a>
+{% endblock %}

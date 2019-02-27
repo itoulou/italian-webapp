@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load bootstrap_tags %}
+{% block title %}Index{% endblock %}
+{% block content %}
+<!--message-->
+<div class="row">
+    <div class="col-xs-12 text-center">
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </div>
+</div>
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    {{ login_form | as_bootstrap }}
+    <button type="submit">Login</button>
+</form>
+<a href="{% url 'register' %}">Sign up</a>
+{% endblock %}
