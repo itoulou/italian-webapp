@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django_forms_bootstrap',
     'home',
     'authentication',
+    'add_verb',
 ]
 
 MIDDLEWARE = [

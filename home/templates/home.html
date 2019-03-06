@@ -1,7 +1,50 @@
 {% extends 'base.html' %}
+{% load bootstrap_tags %}
 {% block title %}Home{% endblock %}
+{% block head_js %}
+<script type="text/javascript">
+    // Jquery for modal
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').focus()
+    });
+</script>
+{% endblock %}
 {% block content %}
-{% for message in messages %}
-{{ message }}
-{% endfor %}
+
+<div class="row">
+    <div class="col-xs-12 text-center">
+        <!--Message-->
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </div>
+</div>
+{% if request.user.is_superuser %}
+<!--form to add a new verb-->
+<div class="row">
+    <div class="col-xs-12 text-center">
+        <a class="btn default-btn" data-toggle="modal" data-target="#add_verb">Add Verb</a>
+    </div>
+</div>
+<div class="modal fade" id="add_verb" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Verb</h4>
+      </div>
+      <div class="modal-body">
+        <form action="{% url 'add-verb-are' %}" method="POST"> 
+          {% csrf_token %}
+          {{ verb_form | as_bootstrap }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
 {% endblock %}
