@@ -23,10 +23,13 @@
 <!--form to add a new verb-->
 <div class="row">
     <div class="col-xs-12 text-center">
-        <a class="btn default-btn" data-toggle="modal" data-target="#add_verb">Add Verb</a>
+        <a class="btn default-btn" data-toggle="modal" data-target="#add_verb_are">Add Verb(are)</a>
+        <a class="btn default-btn" data-toggle="modal" data-target="#add_verb_ere">Add Verb(ere)</a>
+        <a class="btn default-btn" data-toggle="modal" data-target="#add_verb_ire">Add Verb(ire)</a>
     </div>
 </div>
-<div class="modal fade" id="add_verb" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!--add verb are modal-->
+<div class="modal fade" id="add_verb_are" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -36,7 +39,52 @@
       <div class="modal-body">
         <form action="{% url 'add-verb-are' %}" method="POST"> 
           {% csrf_token %}
-          {{ verb_form | as_bootstrap }}
+          {{ verb_infinitive_form_are | as_bootstrap }}
+          {{ verb_conjugations_form_are | as_bootstrap }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--add verb ere modal-->
+<div class="modal fade" id="add_verb_ere" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Verb</h4>
+      </div>
+      <div class="modal-body">
+        <form action="{% url 'add-verb-ere' %}" method="POST"> 
+          {% csrf_token %}
+          {{ verb_infinitive_form_ere | as_bootstrap }}
+          {{ verb_conjugations_form_ere | as_bootstrap }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--add verb ire modal-->
+<div class="modal fade" id="add_verb_ire" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Verb</h4>
+      </div>
+      <div class="modal-body">
+        <form action="{% url 'add-verb-ire' %}" method="POST"> 
+          {% csrf_token %}
+          {{ verb_infinitive_form_ire | as_bootstrap }}
+          {{ verb_conjugations_form_ire | as_bootstrap }}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
