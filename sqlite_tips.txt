@@ -1,0 +1,6 @@
+to open sqlite3 shell
+
+1. python3 manage.py dbshell
+2. .tables;.
+3. .header on
+4. .mode columns

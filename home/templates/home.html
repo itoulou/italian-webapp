@@ -95,4 +95,26 @@
   </div>
 </div>
 {% endif %}
+<div class="row">
+  <div class="col-xs-12 text-center">
+    <form action="{% url 'search-verb' %}" method="GET">
+      <input class="" type="text"name="search-verb"placeholder="Cerca un verbo">
+      <button type="submit">Cerca</button>
+    </form>
+  </div>
+</div>
+{% if all_verbs %}
+  {% for verb in all_verbs %}
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <div>
+          {{ verb.infinitive }}
+      </div>
+      <div>
+          {{ verb.meaning }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+{% endif %}
 {% endblock %}

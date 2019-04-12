@@ -148,4 +148,6 @@ def add_verb_ire(request):
         verb_infinitive_form_ire = Verb_IRE_Form()
         verb_conjugations_form_ire = Verb_IRE_LineForm()
     return render(request, "home.html", {"verb_infinitive_form_ire": verb_infinitive_form_ire,
-                                         "verb_conjugations_form_ire": verb_conjugations_form_ire})                                         
+                                         "verb_conjugations_form_ire": verb_conjugations_form_ire})
+                                         
+                                         

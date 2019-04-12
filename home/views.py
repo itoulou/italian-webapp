@@ -10,7 +10,7 @@ def home(request):
     verb_conjugations_form_ere = Verb_ERE_LineForm()
     verb_infinitive_form_ire = Verb_IRE_Form()
     verb_conjugations_form_ire = Verb_IRE_LineForm()
-    
+
     return render(request, "home.html", {"verb_infinitive_form_are": verb_infinitive_form_are,
                                          "verb_conjugations_form_are": verb_conjugations_form_are,
                                          "verb_infinitive_form_ere": verb_infinitive_form_ere,
