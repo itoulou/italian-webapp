@@ -21,9 +21,9 @@ def add_verb_are(request):
                 messages.error(request, "this verb doesn't end in 'are'")
                 return redirect("home")
             verbs = Verb_ARE.objects.filter(infinitive=infinitive_from_form)
+              
             if verbs:
                 for verb in verbs:
-                    # %(app_label)s_%(class)s
                     if verb.are_line_items.filter(tense=verb_conjugations_form.cleaned_data['tense']):
                         messages.error(request, "this verb and tense has already been added")
                         return redirect("home")

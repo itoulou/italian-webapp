@@ -20,6 +20,7 @@ from authentication.views import login
 from authentication import urls as urls_authentication
 from add_verb import urls as urls_add_verb
 from search import urls as urls_search
+from view_verb import urls as urls_view_verb
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -28,4 +29,5 @@ urlpatterns = [
     url(r'^home/', include(home_urls)),
     url(r'^add-verb/', include(urls_add_verb)),
     url(r'^search/', include(urls_search)),
+    url(r'^view_verb/', include(urls_view_verb)),
 ]

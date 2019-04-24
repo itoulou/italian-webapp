@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load bootstrap_tags %}
+{% load staticfiles %}
 {% block title %}Home{% endblock %}
 {% block head_js %}
 <script type="text/javascript">
@@ -98,21 +99,21 @@
 <div class="row">
   <div class="col-xs-12 text-center">
     <form action="{% url 'search-verb' %}" method="GET">
-      <input class="" type="text"name="search-verb"placeholder="Cerca un verbo">
+      <input class="form-control" type="text"name="search-verb"placeholder="Cerca un verbo">
       <button type="submit">Cerca</button>
     </form>
   </div>
 </div>
 {% if all_verbs %}
   {% for verb in all_verbs %}
+  <br><br><br>
   <div class="row">
     <div class="col-xs-12 text-center">
-      <div>
-          {{ verb.infinitive }}
-      </div>
-      <div>
-          {{ verb.meaning }}
-      </div>
+      <a href="{% url 'view-verb' verb.id verb.infinitive %}">
+        <div>
+            <h1>{{ verb.infinitive }} - {{ verb.meaning }}</h1>
+        </div>
+      </a>
     </div>
   </div>
   {% endfor %}

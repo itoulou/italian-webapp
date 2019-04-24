@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+{% load staticfiles %}
+{% block title %}Verb{% endblock %}
+{% block head_js %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        function updateConjugations(tag, conjugation){
+            if (conjugation != null) {
+                tag.text(conjugation);
+            } else {
+                tag.text("verb is yet to be added");
+            }
+            
+        }
+       $("#tense-selection").change(function(e){
+            e.preventDefault();
+            var url = "{% url 'choose-tense' verb.id verb.infinitive %}";
+            var data = $("#tense-selection").find(":selected").text();
+            var tense = {"tense": data};
+            $.ajax({
+               url: url,
+               method: "POST",
+               dataType: "json",
+               data: tense,
+               success: function(data){
+                   console.log(data);
+                   updateConjugations($(".first-person-singular"), data.first_person_singular);
+                   updateConjugations($(".second-person-singular"), data.second_person_singular);
+                   updateConjugations($(".third-person-singular"), data.third_person_singular);
+                   updateConjugations($(".first-person-plural"), data.first_person_plural);
+                   updateConjugations($(".second-person-plural"), data.second_person_plural);
+                   updateConjugations($(".third-person-plural"), data.third_person_plural);
+               },
+               error: function(xhr, status, errorThrown){
+                   console.log(null);
+               }
+            });
+       });
+    });
+    
+</script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-xs-12 hidden-lg text-center">
+        <h1>{{ verb.infinitive }}</h1>
+        <h3>{{ verb.meaning }}</h3>
+        <h6>Tempi Verbali</h6>
+        <select name="tense-selection" id="tense-selection" class="form-control ">
+            {% for tense in tenses %}
+            <option  value="{{ tense }}">{{ tense }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-xs-12 text center">
+                <table>
+                    <tr>
+                        <th rowspan="2">Persona</th>
+                        <th>Tempo Verbale</th>
+                    </tr>
+                    <tr>
+                        <th>Presente</th>
+                    </tr>
+                    <tr>
+                        <th>1st io</th>
+                        <td class="first-person-singular">{{ conjugations.first_person_singular }}</td>
+                    </tr>
+                    <tr>
+                        <th>2nd tu</th>
+                        <td class="second-person-singular">{{ conjugations.second_person_singular }}</td>
+                    </tr>
+                    <tr>
+                        <th>3rd lui/lei</th>
+                        <td class="third-person-singular">{{ conjugations.third_person_singular }}</td>
+                    </tr>
+                    <tr>
+                        <th>1st noi</th>
+                        <td class="first-person-plural">{{ conjugations.first_person_plural }}</td>
+                    </tr>
+                    <tr>
+                        <th>2nd voi</th>
+                        <td class="second-person-plural">{{ conjugations.second_person_plural }}</td>
+                    </tr>
+                    <tr>
+                        <th>3rd loro</th>
+                        <td class="third-person-plural">{{ conjugations.third_person_plural }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 text-center hidden-xs hidden-sm hidden-md">
+        <table>
+            <tr>
+                <th rowspan="3">Tempi Verbali</th>
+                <th colspan="6">Persona</th>
+            </tr>
+            <tr>
+                <th colspan="3">singulare</th>
+                <th colspan="3">plurale</th>
+            </tr>
+            <tr>
+                <th>io</th>
+                <th>tu</th>
+                <th>lui/lei</th>
+                <th>noi</th>
+                <th>voi</th>
+                <th>loro</th>
+            </tr>
+            
+            {% for conjugation in verb.are_line_items.all %}
+                <tr>
+                    <th>{{ conjugation.tense }}</th>
+                    <td>{{ conjugation.first_person_singular }}</td>
+                    <td>{{ conjugation.second_person_singular }}</td>
+                    <td>{{ conjugation.third_person_singular }}</td>
+                    <td>{{ conjugation.first_person_plural }}</td>
+                    <td>{{ conjugation.second_person_plural }}</td>
+                    <td>{{ conjugation.third_person_plural }}</td>
+                    {% empty %}
+                    <th>{{ conjugation.tense }}</th>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+            {% endfor %}
+            
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'home',
     'authentication',
     'add_verb',
+    'view_verb',
 ]
 
 MIDDLEWARE = [

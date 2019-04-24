@@ -1,3 +1,12 @@
+table, th, td {
+    border: solid 3px #eee;
+    
+}
+
+table {
+    width: 100%;
+}
+
 .navbar-login-form div {
     display: inline-block;
 }
