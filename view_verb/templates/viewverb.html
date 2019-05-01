@@ -110,26 +110,224 @@
                 <th>voi</th>
                 <th>loro</th>
             </tr>
+            <tr>
+                <th>Presente</th>
+                {% if conjugations_presente != None %}
+                <td>{{ conjugations_presente.first_person_singular }}</td>
+                <td>{{ conjugations_presente.second_person_singular }}</td>
+                <td>{{ conjugations_presente.third_person_singular }}</td>
+                <td>{{ conjugations_presente.first_person_plural }}</td>
+                <td>{{ conjugations_presente.second_person_plural }}</td>
+                <td>{{ conjugations_presente.third_person_plural }}</td>
+                {% else %}
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Passato Prossimo</th>
+                {% if conjugations_passato_prossimo != None %}
+                <td>{{ conjugations_passato_prossimo.first_person_singular }}</td>
+                <td>{{ conjugations_passato_prossimo.second_person_singular }}</td>
+                <td>{{ conjugations_passato_prossimo.third_person_singular }}</td>
+                <td>{{ conjugations_passato_prossimo.first_person_plural }}</td>
+                <td>{{ conjugations_passato_prossimo.second_person_plural }}</td>
+                <td>{{ conjugations_passato_prossimo.third_person_plural }}</td>
+                {% else %}
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Imperfetto</th>
+                {% if conjugations_imperfetto != None %}
+                <td>{{ conjugations_imperfetto.first_person_singular }}</td>
+                <td>{{ conjugations_imperfetto.second_person_singular }}</td>
+                <td>{{ conjugations_imperfetto.third_person_singular }}</td>
+                <td>{{ conjugations_imperfetto.first_person_plural }}</td>
+                <td>{{ conjugations_imperfetto.second_person_plural }}</td>
+                <td>{{ conjugations_imperfetto.third_person_plural }}</td>
+                {% else %}
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Trapassato Prossimo</th>
+                {% if conjugations_trapassato_prossimo != None %}
+                <td>{{ conjugations_trapassato_prossimo.first_person_singular }}</td>
+                <td>{{ conjugations_trapassato_prossimo.second_person_singular }}</td>
+                <td>{{ conjugations_trapassato_prossimo.third_person_singular }}</td>
+                <td>{{ conjugations_trapassato_prossimo.first_person_plural }}</td>
+                <td>{{ conjugations_trapassato_prossimo.second_person_plural }}</td>
+                <td>{{ conjugations_trapassato_prossimo.third_person_plural }}</td>
+                {% else %}
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Futuro Semplice</th>
+                {% if conjugations_futuro_semplice != None %}
+                <td>{{ conjugations_futuro_semplice.first_person_singular }}</td>
+                <td>{{ conjugations_futuro_semplice.second_person_singular }}</td>
+                <td>{{ conjugations_futuro_semplice.third_person_singular }}</td>
+                <td>{{ conjugations_futuro_semplice.first_person_plural }}</td>
+                <td>{{ conjugations_futuro_semplice.second_person_plural }}</td>
+                <td>{{ conjugations_futuro_semplice.third_person_plural }}</td>
+                {% else %}
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Futuro Anteriore</th>
+                {% if conjugations_futuro_anteriore != None %}
+                <td>{{ conjugations_futuro_anteriore.first_person_singular }}</td>
+                <td>{{ conjugations_futuro_anteriore.second_person_singular }}</td>
+                <td>{{ conjugations_futuro_anteriore.third_person_singular }}</td>
+                <td>{{ conjugations_futuro_anteriore.first_person_plural }}</td>
+                <td>{{ conjugations_futuro_anteriore.second_person_plural }}</td>
+                <td>{{ conjugations_futuro_anteriore.third_person_plural }}</td>
+                {% else %}
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Congiuntivo Presente</th>
+                {% if conjugations_congiuntivo_presente != None %}
+                <td>{{ conjugations_congiuntivo_presente.first_person_singular }}</td>
+                <td>{{ conjugations_congiuntivo_presente.second_person_singular }}</td>
+                <td>{{ conjugations_congiuntivo_presente.third_person_singular }}</td>
+                <td>{{ conjugations_congiuntivo_presente.first_person_plural }}</td>
+                <td>{{ conjugations_congiuntivo_presente.second_person_plural }}</td>
+                <td>{{ conjugations_congiuntivo_presente.third_person_plural }}</td>
+                {% else %}
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Congiuntivo Passato</th>
+                {% if conjugations_congiuntivo_passato != None %}
+                <td>{{ conjugations_congiuntivo_passato.first_person_singular }}</td>
+                <td>{{ conjugations_congiuntivo_passato.second_person_singular }}</td>
+                <td>{{ conjugations_congiuntivo_passato.third_person_singular }}</td>
+                <td>{{ conjugations_congiuntivo_passato.first_person_plural }}</td>
+                <td>{{ conjugations_congiuntivo_passato.second_person_plural }}</td>
+                <td>{{ conjugations_congiuntivo_passato.third_person_plural }}</td>
+                {% else %}
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Congiuntivo Imperfetto</th>
+                {% if conjugations_congiuntivo_imperfetto != None %}
+                <td>{{ conjugations_congiuntivo_imperfetto.first_person_singular }}</td>
+                <td>{{ conjugations_congiuntivo_imperfetto.second_person_singular }}</td>
+                <td>{{ conjugations_congiuntivo_imperfetto.third_person_singular }}</td>
+                <td>{{ conjugations_congiuntivo_imperfetto.first_person_plural }}</td>
+                <td>{{ conjugations_congiuntivo_imperfetto.second_person_plural }}</td>
+                <td>{{ conjugations_congiuntivo_imperfetto.third_person_plural }}</td>
+                {% else %}
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Congiuntivo Trapassato</th>
+                {% if conjugations_congiuntivo_trapassato != None %}
+                <td>{{ conjugations_congiuntivo_trapassato.first_person_singular }}</td>
+                <td>{{ conjugations_congiuntivo_trapassato.second_person_singular }}</td>
+                <td>{{ conjugations_congiuntivo_trapassato.third_person_singular }}</td>
+                <td>{{ conjugations_congiuntivo_trapassato.first_person_plural }}</td>
+                <td>{{ conjugations_congiuntivo_trapassato.second_person_plural }}</td>
+                <td>{{ conjugations_congiuntivo_trapassato.third_person_plural }}</td>
+                {% else %}
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Condizionale Presente</th>
+                {% if conjugations_condizionale_presente != None %}
+                <td>{{ conjugations_condizionale_presente.first_person_singular }}</td>
+                <td>{{ conjugations_condizionale_presente.second_person_singular }}</td>
+                <td>{{ conjugations_condizionale_presente.third_person_singular }}</td>
+                <td>{{ conjugations_condizionale_presente.first_person_plural }}</td>
+                <td>{{ conjugations_condizionale_presente.second_person_plural }}</td>
+                <td>{{ conjugations_condizionale_presente.third_person_plural }}</td>
+                {% else %}
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Condizionale Passato</th>
+                {% if conjugations_condizionale_passato != None %}
+                <td>{{ conjugations_condizionale_passato.first_person_singular }}</td>
+                <td>{{ conjugations_condizionale_passato.second_person_singular }}</td>
+                <td>{{ conjugations_condizionale_passato.third_person_singular }}</td>
+                <td>{{ conjugations_condizionale_passato.first_person_plural }}</td>
+                <td>{{ conjugations_condizionale_passato.second_person_plural }}</td>
+                <td>{{ conjugations_condizionale_passato.third_person_plural }}</td>
+                {% else %}
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                {% endif %}
+            </tr>
             
-            {% for conjugation in verb.are_line_items.all %}
-                <tr>
-                    <th>{{ conjugation.tense }}</th>
-                    <td>{{ conjugation.first_person_singular }}</td>
-                    <td>{{ conjugation.second_person_singular }}</td>
-                    <td>{{ conjugation.third_person_singular }}</td>
-                    <td>{{ conjugation.first_person_plural }}</td>
-                    <td>{{ conjugation.second_person_plural }}</td>
-                    <td>{{ conjugation.third_person_plural }}</td>
-                    {% empty %}
-                    <th>{{ conjugation.tense }}</th>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                </tr>
-            {% endfor %}
+            
             
         </table>
     </div>

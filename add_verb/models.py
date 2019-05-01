@@ -38,12 +38,12 @@ class Verb_ARELineItem(models.Model):
     )
     
     tense = models.CharField(max_length=50, choices=TENSES, blank=False, null=True)
-    first_person_singular = models.CharField(max_length=30, blank=False, null=True)
-    second_person_singular = models.CharField(max_length=30, blank=False, null=True)
-    third_person_singular = models.CharField(max_length=30, blank=False, null=True)
-    first_person_plural = models.CharField(max_length=30, blank=False, null=True)
-    second_person_plural = models.CharField(max_length=30, blank=False, null=True)
-    third_person_plural = models.CharField(max_length=30, blank=False, null=True)
+    first_person_singular = models.CharField(max_length=30, blank=False, null=True, default="no conjugation yet")
+    second_person_singular = models.CharField(max_length=30, blank=False, null=True, default="no conjugation yet")
+    third_person_singular = models.CharField(max_length=30, blank=False, null=True, default="no conjugation yet")
+    first_person_plural = models.CharField(max_length=30, blank=False, null=True, default="no conjugation yet")
+    second_person_plural = models.CharField(max_length=30, blank=False, null=True, default="no conjugation yet")
+    third_person_plural = models.CharField(max_length=30, blank=False, null=True, default="no conjugation yet")
     
     def __unicode__(self):
         return "{0}".format(self.tense.title)
@@ -133,12 +133,12 @@ class Verb_IRELineItem(models.Model):
     )
     
     tense = models.CharField(max_length=50, choices=TENSES, blank=False, null=True)
-    first_person_singular = models.CharField(max_length=30, blank=False, null=True)
-    second_person_singular = models.CharField(max_length=30, blank=False, null=True)
-    third_person_singular = models.CharField(max_length=30, blank=False, null=True)
-    first_person_plural = models.CharField(max_length=30, blank=False, null=True)
-    second_person_plural = models.CharField(max_length=30, blank=False, null=True)
-    third_person_plural = models.CharField(max_length=30, blank=False, null=True)
+    first_person_singular = models.CharField(max_length=30, blank=False, null=True, default="no conjugation yet")
+    second_person_singular = models.CharField(max_length=30, blank=False, null=True, default="no conjugation yet")
+    third_person_singular = models.CharField(max_length=30, blank=False, null=True, default="no conjugation yet")
+    first_person_plural = models.CharField(max_length=30, blank=False, null=True, default="no conjugation yet")
+    second_person_plural = models.CharField(max_length=30, blank=False, null=True, default="no conjugation yet")
+    third_person_plural = models.CharField(max_length=30, blank=False, null=True, default="no conjugation yet")
     
     def __unicode__(self):
         return "{0}".format(self.tense.title)        
